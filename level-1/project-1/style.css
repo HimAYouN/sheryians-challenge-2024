@@ -109,3 +109,31 @@ img{
 #img3{
     transform: translate(-50%, -50%) rotate(-10deg);
 }
+
+#btm-left{
+    position: absolute;
+    bottom: 10%;
+    left: 3%;
+    font-size: 17px;
+}
+
+#contacts{
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+    font-size: 20px;
+}
+
+#contacts p{
+    font-size: 17px;
+}
+
+#semicircle{
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    font-size: 50px;
+    background-color: transparent;
+    
+    transform: translate(-50%);
+}
