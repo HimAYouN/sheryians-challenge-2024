@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: gilroy;
+    font-family: 'Poppins', sans-serif;
 }
 html, body{
     height: 100%;
@@ -50,7 +50,7 @@ html, body{
 }
 
 #nav h1{
-    font-weight: 500;
+    font-weight: 800;
     font-size: 22px;
     text-transform: uppercase;
 }
@@ -82,7 +82,7 @@ html, body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 150px;
+    font-size: 170px;
     text-transform: uppercase;
     width: 100%;
     text-align: center;
