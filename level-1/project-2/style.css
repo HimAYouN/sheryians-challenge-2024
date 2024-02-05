@@ -67,3 +67,48 @@ html, body{
     background-size: cover;
 
 }
+
+#about{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(255, 231, 122);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 60px;
+}
+
+#about h2{
+    background-color: #fff;
+    width: 60%;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 70px;
+    letter-spacing: -3px;
+}
+
+#about-part2{
+    width: 35%;
+    height: 100%;
+    padding: 0 50px;
+    background-color: #fff;
+    border-left: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#about-part2 h3{
+    font-size: 30px;
+    font-weight: 600;
+
+}
+
+#icons i{
+    background-color: black;
+    color: #fff;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
