@@ -7,16 +7,16 @@
 body,html{
     height: 100%;
     width: 100%;
+    background-color: rgb(255, 235, 205);
 }
 
 #main{
     height: 100%;
     width: 100%;
-    background-color: navajowhite;
 }
 #nav{
     width: 100%;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     display: flex;
     justify-content: space-between;
     padding: 40px 60px;
@@ -94,4 +94,66 @@ body,html{
     height: 2px;
     width: 100px;
     background-color: #000;
+}
+
+
+#projects{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 65px;
+    gap: 60px;
+}
+
+.elem{
+    width: 50%;
+}
+
+.elem-img{
+    background-color: rgb(227, 254, 255);
+    height: 650px;
+    width: 100%;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+#img1{
+    background-image: url(https://images.unsplash.com/photo-1706708316348-942c80a29576?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+#img2{
+    background-image: url(https://images.unsplash.com/photo-1621246475596-153d9c743fa4?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.bottom i{
+    padding: 14px 30px;
+    font-size: 22px;
+    border: 2px solid black;
+    border-radius: 50px;
+    font-weight: 800;
+}
+
+.bottom h2{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+}
+.bottom h4{
+    font-size: 20px;
+    color: rgb(56, 56, 56);
+    font-weight: 500;
+}
+
+.bottom i:hover{
+    background-color: black;
+    color: white;
+
 }
