@@ -8,3 +8,28 @@ var arr = [
     {name: "apple juice", image: "https://images.unsplash.com/photo-1576673442511-7e39b6545c87?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
 ]
 
+
+function showTheCards(){
+    var clutter = "";
+    arr.forEach(function(obj){
+        clutter += `<div class="box">
+        <img class="cursor-pointer" src="${obj.image}"/>
+        <div class="caption"></div>
+        </div> `
+    })
+    // console.log(clutter)
+    document.querySelector(".container").innerHTML = clutter;
+}
+
+function handleSearchFunctionality(){
+    // document.querySelector(".overlay").style.display = "block"
+    document.querySelector("#searchinput").addEventListener("focus", ()=>{
+        document.querySelector(".overlay").style.display = "block";
+    })
+    document.querySelector("#searchinput").addEventListener("blur", ()=>{
+        document.querySelector(".overlay").style.display = "none";
+    })
+}
+
+handleSearchFunctionality();
+showTheCards();
