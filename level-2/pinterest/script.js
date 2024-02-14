@@ -22,12 +22,32 @@ function showTheCards(){
 }
 
 function handleSearchFunctionality(){
+    var searchInput = document.querySelector("#searchinput");
+    
     // document.querySelector(".overlay").style.display = "block"
-    document.querySelector("#searchinput").addEventListener("focus", ()=>{
+
+    searchInput
+    .addEventListener("focus", ()=>{
         document.querySelector(".overlay").style.display = "block";
     })
-    document.querySelector("#searchinput").addEventListener("blur", ()=>{
+    searchInput.addEventListener("blur", ()=>{
         document.querySelector(".overlay").style.display = "none";
+    })
+
+
+    searchInput.addEventListener("input", ()=>{
+        const newFilteredArr = arr.filter(obj => obj.name.toLowerCase().startsWith(searchInput.value));
+        var clutter = "";
+        newFilteredArr.forEach( (obj)=>{
+            clutter += `<div class= "res flex px-8 py-3">
+            <i class="ri-search-line font-semibold mr-5"></i>
+            <h3 class="font-semibold">${obj.name}</h3>
+        </div>`
+        })
+
+        document.querySelector(".searchdata").style.display = "block";
+        document.querySelector(".searchdata").innerHTML = clutter;
+        // console.log(newFilteredArr)
     })
 }
 
