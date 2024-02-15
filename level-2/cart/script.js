@@ -16,7 +16,7 @@ var clutter = "";
 products.forEach((product, index)=>{
     clutter += `<div class="product w-fit rounded-xl p-2 bg-white">
     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden ">
-        <img src="${product.img} alt="${product.headline}"/>
+        <img class=" h-full w-full object-cover" src="${product.img} alt="${product.headline}"/>
     </div>
     <div class="data w-full px-2 py-5">
         <h1 class="font-semibold text-xl leading-none tracking-tight">${product.name}</h1>
@@ -42,7 +42,7 @@ function addPopularProducts(){
     var clutter = ""
 popularProducts.forEach((popularProduct)=>{
     clutter += `<div class="popular bg-white p-2 rounded-2xl flex items-start gap-3 w-[60%] flex-shrink-0">
-    <div class="w-20 h-20 bg-red-500 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
+    <div class="w-20 h-20 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
         <img class="w-full h-full object-cover"
             src="${popularProduct.img}"
             alt="">
@@ -73,12 +73,23 @@ function addToCart(){
 function showCart(){
     document.querySelector(".carticon")
     .addEventListener('click', function(){
-        document.querySelector(".cartexpnd").computedStyleMap.display = "block";
+        document.querySelector(".cartexpnd").style.display = "block";
 
         var clutter = ""
         cart.forEach((item, index)=>{
-            clutter += 
+            clutter +=  `<div class="flex gap-2 bg-white p-2 rounded-lg">
+            <div class="w-10 h-10 flex-shrink-0 rounded-lg overflow-hidden">
+                <img class="w-full h-full object-cover " src="${item.img}"/>
+            </div>
+            <div>
+                <h3 class="font-semibold ">${item.name}</h3>
+                <h5 class="text-sm font-semibold opacity-80">${item.price}</h5>
+            </div>
+        </div>`;
+
         })
+
+        document.querySelector(".cartexpnd").innerHTML= clutter;
     })
 }
 
