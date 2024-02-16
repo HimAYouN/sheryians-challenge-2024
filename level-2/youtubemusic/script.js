@@ -6,6 +6,7 @@ var arr = [
 ]
 var allSongs = document.querySelector("#all-songs");
 var audio = new Audio();
+var selectedSong = 0;
 
 function showSongs(){
     var clutter = "";
@@ -20,15 +21,64 @@ function showSongs(){
     })
     
     allSongs.innerHTML = clutter
+    audio.src = arr[selectedSong].url;
+    document.querySelector('#left').style.backgroundImage = `url("${arr[selectedSong].img}")`
 }
 
+
+
 allSongs.addEventListener('click', (e)=>{
-    console.log(arr[e.target.id].img)
-    audio.src = arr[e.target.id].url;
+    selectedSong = e.target.id;
+    showSongs();
+    play.innerHTML = `<i class="ri-pause-mini-fill"></i>`
+    flag= 1
     audio.play()
-    document.querySelector('#left').style.backgroundImage = `url("${arr[e.target.id].img}")`
 
 })
+
+
+var play = document.querySelector('#play');
+var backward = document.querySelector('#backward');
+var forward = document.querySelector('#forward');
+var flag = 0
+
+play.addEventListener('click', ()=>{
+    if(flag==0){
+        play.innerHTML = `<i class="ri-pause-mini-fill"></i>`
+        showSongs()
+        audio.play()
+        flag = 1
+    }else{
+        play.innerHTML = `<i class="ri-play-mini-fill"></i>`
+        showSongs()
+        audio.pause()
+        flag = 0 
+    }
+
+})
+
+
+forward.addEventListener('click', ()=>{
+    if(selectedSong<arr.length-1){
+        selectedSong++
+        showSongs();
+        audio.play()
+    }else{
+        forward.style.opacity = 0.4;
+    }
+})
+backward.addEventListener('click', ()=>{
+    if(selectedSong>=0){
+        selectedSong--
+        showSongs();
+        audio.play()
+    }else{
+        backward.style.opacity = 0.4;
+    }
+})
+
+
+
 
 
 
